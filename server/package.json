@@ -1,0 +1,50 @@
+{
+  "name": "mern-bug-tracker-server",
+  "version": "1.0.0",
+  "description": "Backend server for Bug Tracker application",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js",
+    "test": "jest",
+    "test:unit": "jest --testPathPattern=unit",
+    "test:integration": "jest --testPathPattern=integration",
+    "setup-test-db": "node scripts/setupTestDb.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.6.1",
+    "express": "^4.21.2",
+    "express-validator": "^7.0.1",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^7.8.7"
+  },
+  "devDependencies": {
+    "jest": "^29.5.0",
+    "mongodb-memory-server": "^8.13.0",
+    "nodemon": "^3.1.11",
+    "supertest": "^6.3.3"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "testMatch": [
+      "**/tests/**/*.test.js"
+    ],
+    "setupFilesAfterEnv": [
+      "<rootDir>/tests/setup.js"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.js",
+      "!src/config/**",
+      "!**/node_modules/**"
+    ]
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}

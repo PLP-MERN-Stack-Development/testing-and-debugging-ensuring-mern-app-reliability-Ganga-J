@@ -1,0 +1,25 @@
+{
+  "name": "mern-bug-tracker",
+  "version": "1.0.0",
+  "description": "A Bug Tracker application built with MERN stack, including comprehensive testing and debugging",
+  "main": "index.js",
+  "scripts": {
+    "install-all": "npm install && cd client && npm install && cd ../server && npm install",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd server && npm start",
+    "client": "cd client && npm start",
+    "test": "jest",
+    "test:unit": "jest --testPathPattern=unit",
+    "test:integration": "jest --testPathPattern=integration",
+    "test:e2e": "cd client && npm run test:e2e",
+    "build": "cd client && npm run build",
+    "setup-test-db": "cd server && npm run setup-test-db"
+  },
+  "keywords": ["mern", "bug-tracker", "testing", "debugging"],
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^7.6.0",
+    "jest": "^29.5.0"
+  }
+}
